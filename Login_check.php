@@ -10,20 +10,26 @@ else{
     echo "Database connected". "<br>". "<br>";
 }
 
-$st_name = $_POST["name"];
 $id = $_POST["id"];
-$pass = $_POST["password"];
+$pass = $_POST["pass"];
+
+echo "Student ID: ", $id."<br>";
+echo "Student pass: ", $pass."<br>";
 
 $sql = "SELECT PASS FROM reg_info WHERE ID = $id";
 $result = $db->query($sql);
 
-if($result=$pass){
+$row = $result->fetch_assoc();
 
-    echo "successfull";
+if($row["PASS"]==$pass){
+    
+    echo"successfull";
+
 }
+
 else{
-
+    
     echo"error";
-}
 
+}
 ?>
