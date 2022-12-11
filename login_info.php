@@ -10,9 +10,8 @@ else{
     echo "Database connected". "<br>". "<br>";
 }
 
-
-/*$id = $_POST["ID"];
-$pass = $_POST["PASS"];
+$id = $_POST["id"];
+$pass = $_POST["password"];
 
 $sql = "INSERT INTO log_info(ID, PASS) VALUES($id, '$pass')";
 
@@ -31,4 +30,3 @@ else{
 
 
 ?>
-*/
