@@ -10,11 +10,13 @@ else{
     echo "Database connected". "<br>". "<br>";
 }
 
+$st_name = $_POST["name"];
 $id = $_POST["id"];
 $pass = $_POST["password"];
 
-$sql = "INSERT INTO log_info(ID, PASS) VALUES($id, '$pass')";
+$sql = "INSERT INTO reg_info(Student_Name,ID, PASS) VALUES('$st_name',$id, '$pass')";
 
+echo "Student Name: ", $st_name."<br>";
 echo "Student ID: ", $id."<br>";
 echo "Student Pass: ", $pass."<br>";
 
