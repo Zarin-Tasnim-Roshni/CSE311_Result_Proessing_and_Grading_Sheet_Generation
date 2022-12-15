@@ -24,14 +24,13 @@ echo "quiz: ", $quiz."<br>";
 echo "mid: ", $mid."<br>";
 echo "final: ", $final."<br>";
 
-
-
-
-
-$sql = "SELECT PASS FROM reg_info WHERE ID = $id";
+$sql = "SELECT Course_Name FROM course WHERE  Student_ID = $id";
 $result = $db->query($sql);
 
+
 $row = $result->fetch_assoc();
+
+echo "course name : ", $row["Course_Name"];
 
 if($row["PASS"]==$pass){
     
