@@ -33,6 +33,7 @@ $row = $result->fetch_assoc();
 echo "course name : ", $row["Course_Name"];
 
 if($row["Course_Name"]==$course){
+<<<<<<< HEAD
    
     
 
@@ -52,11 +53,21 @@ if($row["Course_Name"]==$course){
         echo 'something else';
         }
 
+=======
+    
+    
+>>>>>>> 31243e4f67aad63d06f4ddc69372c31f13c69248
 
 }
 
 else{
     
+<<<<<<< HEAD
  echo "error";
  
 }
+=======
+
+}
+?>
+>>>>>>> 31243e4f67aad63d06f4ddc69372c31f13c69248
