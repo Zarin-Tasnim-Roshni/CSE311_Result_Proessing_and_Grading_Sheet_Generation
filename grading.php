@@ -32,42 +32,76 @@ $row = $result->fetch_assoc();
 
 echo "course name : ", $row["Course_Name"];
 
+
 if($row["Course_Name"]==$course){
-<<<<<<< HEAD
-   
-    
+
 
     $result=$quiz+$mid+$final;
 
     switch($result) {
         case $result >= 70 and $result <= 100:
+
             echo 'Your Grade is A';
+            $grade = 'A';
+
+            $sql= "UPDATE course SET QUIZ = $quiz WHERE Student_ID = $id";
+            mysqli_query($db, $sql);
+
+            $sql= "UPDATE course SET MID = $mid WHERE Student_ID = $id";
+            mysqli_query($db, $sql);
+
+            $sql= "UPDATE course SET FINAL = $final WHERE Student_ID = $id";
+            mysqli_query($db, $sql);
+
+            $sql= "UPDATE course SET GRADE = '$grade' WHERE Student_ID = $id";
+            mysqli_query($db, $sql);
+
             break;
+
         case $result >= 60 and $result <= 69:
+
             echo 'Your Grade is B+';
+            $grade = 'B';
+
+            $sql= "UPDATE course SET QUIZ = $quiz WHERE Student_ID = $id";
+            mysqli_query($db, $sql);
+
+            $sql= "UPDATE course SET MID = $mid WHERE Student_ID = $id";
+            mysqli_query($db, $sql);
+
+            $sql= "UPDATE course SET FINAL = $final WHERE Student_ID = $id";
+            mysqli_query($db, $sql);
+
+            $sql= "UPDATE course SET GRADE = '$grade' WHERE Student_ID = $id";
+            mysqli_query($db, $sql);
             break;
+
         case $result >= 59 and $result <= 60:
+
             echo 'Your Grade is B';
+            $grade = 'C';
+            
+            $sql= "UPDATE course SET QUIZ = $quiz WHERE Student_ID = $id";
+            mysqli_query($db, $sql);
+
+            $sql= "UPDATE course SET MID = $mid WHERE Student_ID = $id";
+            mysqli_query($db, $sql);
+
+            $sql= "UPDATE course SET FINAL = $final WHERE Student_ID = $id";
+            mysqli_query($db, $sql);
+
+            $sql= "UPDATE course SET GRADE = '$grade' WHERE Student_ID = $id";
+            mysqli_query($db, $sql);
             break;
         default:
         echo 'something else';
         }
 
-=======
-    
-    
->>>>>>> 31243e4f67aad63d06f4ddc69372c31f13c69248
-
-}
-
+    }
 else{
     
-<<<<<<< HEAD
  echo "error";
  
 }
-=======
 
-}
 ?>
->>>>>>> 31243e4f67aad63d06f4ddc69372c31f13c69248
