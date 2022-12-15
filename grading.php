@@ -1,6 +1,6 @@
 <?php
 
-$db = mysqli_connect("localhost", "root", "", "logininfo");
+$db = mysqli_connect("localhost", "root", "", "result_processing");
 
 if(!$db){
 
@@ -10,7 +10,7 @@ else{
     echo "Database connected". "<br>". "<br>";
 }
 
-$id = $_POST["id"];
+$course = $_POST["id"];
 $pass = $_POST["password"];
 
 echo "Student ID: ", $id."<br>";

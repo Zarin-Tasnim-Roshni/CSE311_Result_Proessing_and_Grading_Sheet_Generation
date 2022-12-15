@@ -1,24 +1,24 @@
 * {
     padding: 0;
     margin: 0;
-    color: #ffffff;
+    color: #1e0612;
     box-sizing: border-box;
     word-wrap: break-word;
     font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Ubuntu,sans-serif;
   }
   body {
       min-height: 100%;
-      background-color: #6c41e1;
+     
   }
   h1 {
       letter-spacing: -1px;
   }
   a {
-    color: #6373ff;
+    color: #432124;
     text-decoration: unset;
   }
   .login-root {
-      background: rgb(156, 166, 255);
+      background: rgb(235, 188, 253);
       display: flex;
       width: 100%;
       min-height: 100vh;
@@ -51,24 +51,22 @@
       -ms-flex-direction: column;
       flex-direction: column;
   }
-  .box-divider--light-all-2 {
-      box-shadow: inset 0 0 0 2px #76b2fa;
-  }
-  .box-background--blue {
-      background-color: #748bff;
-  }
-  .box-background--white {
-    background-color: #a4b0ff; 
-  }
-  .box-background--blue800 {
-      background-color: #212d63;
-  }
-  .box-background--gray100 {
-      background-color: #e3e8ee;
-  }
-  .box-background--cyan200 {
-      background-color: #7fd3ed;
-  }
+ /* .box-divider--light-all-2 {
+      box-shadow: inset 0 0 0 2px #f4aae7;
+  }*/
+ /* .box-background--blue {
+      background-color: #f0be78;
+  }*/
+ 
+  /*.box-background--blue800 {
+      background-color: #f7fa33;
+  }*/
+  /*.box-background--gray100 {
+      background-color: #6cd174;
+  }*/
+ /* .box-background--cyan200 {
+      background-color: #f30f35;
+  }*/
   .padding-top--64 {
     padding-top: 64px;
   }
@@ -98,15 +96,15 @@
       margin: 0px auto;
       width: 100%;
       max-width: 448px;
-      background: rgb(181, 200, 252);
+      background: white;
       border-radius: 4px;
-      box-shadow: rgba(0, 2, 8, 0.011) 0px 7px 14px 0px, rgba(0, 0, 7, 0.176) 0px 3px 6px 0px;
+      box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
   }
   span {
       display: block;
       font-size: 20px;
       line-height: 28px;
-      color: #1138e8;
+      color: #1a1f36;
   }
   label {
       margin-bottom: 10px;
@@ -134,9 +132,9 @@
       min-height: 44px;
       border: unset;
       border-radius: 4px;
-      outline-color: rgba(14, 50, 228, 0.5);
-      background-color: rgb(248, 248, 248);
-      box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+      outline-color: rgb(194, 97, 239);
+      background-color: rgba(254, 219, 255, 0.868);
+      box-shadow: rgba(216, 37, 37, 0) 0px 0px 0px 0px, 
                   rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
                   rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
                   rgba(60, 66, 87, 0.16) 0px 0px 0px 1px, 
@@ -146,15 +144,15 @@
   }
   
   input[type="submit"] {
-      background-color: rgb(99, 108, 234);
+      background-color: rgb(143, 75, 189);
       box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
                   rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
                   rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, 
-                  rgb(84, 105, 212) 0px 0px 0px 1px, 
+                  rgb(239, 7, 134) 0px 0px 0px 1px, 
                   rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
                   rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
                   rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
-      color: rgb(255, 255, 255);
+      color: rgb(245, 245, 245);
       font-weight: 600;
       cursor: pointer;
   }
@@ -180,7 +178,7 @@
       text-align: center;
   }
   .listing a {
-      color: #697386;
+      color: #4782ef;
       font-weight: 600;
       margin: 0 10px;
   }
