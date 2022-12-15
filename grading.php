@@ -32,15 +32,14 @@ $row = $result->fetch_assoc();
 
 echo "course name : ", $row["Course_Name"];
 
-if($row["PASS"]==$pass){
+if($row["Course_Name"]==$course){
     
-    echo"successfull";
+    
 
 }
 
 else{
     
-    echo"error";
 
 }
 ?>
