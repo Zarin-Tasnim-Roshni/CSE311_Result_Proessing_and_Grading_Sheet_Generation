@@ -93,6 +93,8 @@ if($row["Course_Name"]==$course){
             $sql= "UPDATE course SET GRADE = '$grade' WHERE Student_ID = $id";
             mysqli_query($db, $sql);
             break;
+
+            
         default:
         echo 'something else';
         }

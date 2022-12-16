@@ -1,6 +1,6 @@
 <?php
 
-$db = mysqli_connect("localhost", "root", "", "logininfo");
+$db = mysqli_connect("localhost", "root", "", "result_processing");
 
 if(!$db){
 
@@ -16,12 +16,12 @@ $pass = $_POST["password"];
 echo "Student ID: ", $id."<br>";
 echo "Student pass: ", $pass."<br>";
 
-$sql = "SELECT PASS FROM reg_info WHERE ID = $id";
+$sql = "SELECT password FROM student_info WHERE Student_ID = $id";
 $result = $db->query($sql);
 
 $row = $result->fetch_assoc();
 
-if($row["PASS"]==$pass){
+if($row["password"]==$pass){
     
     echo"successfull";
 
