@@ -1,5 +1,10 @@
 <?php
 
+session_start();
+
+// Print the session variable
+echo "Hello," . $_SESSION['ID'];
+
 	// Connect to database
 	$db = mysqli_connect("localhost", "root", "", "result_processing");
 	
@@ -52,6 +57,8 @@
 
 		<label>Select a Course</label>
 
+		<h1> YOUR ID IS <?php echo $_SESSION['ID']?></h1>
+
 		<select name="Category">
 			<?php
 
@@ -66,7 +73,9 @@
 				?>">
 					<?php echo $category["Course_Name"];
 						// To show the category name to the user
+
 					?>
+					
 				</option>
 			<?php
 				endwhile;
@@ -75,7 +84,10 @@
 			?>
 		</select>
 		<br>
-		<input type="submit" value="submit">
+
+		<input type="hidden" name="secret" value= <?php echo $_SESSION['ID']?>>
+
+		<input type="submit" value="submit"> 
 	</form>
 	<br>
 </body>

@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $db = mysqli_connect("localhost", "root", "", "result_processing");
 
 if(!$db){
@@ -28,6 +30,8 @@ echo "Student email: ", $st_email."<br>";
 echo "Student gender: ", $st_gender."<br>";
 
 
+
+
 if(mysqli_query($db, $sql)){
 
     echo "Information Inserted". "<br>". "<br>";
@@ -35,6 +39,11 @@ if(mysqli_query($db, $sql)){
     mysqli_query($db, $sql);
 
      echo "Information Inserted". "<br>". "<br>";
+
+     $_SESSION['ID'] = $id;
+     header('Location: course_reg.php');
+
+
 
 }
 else{
