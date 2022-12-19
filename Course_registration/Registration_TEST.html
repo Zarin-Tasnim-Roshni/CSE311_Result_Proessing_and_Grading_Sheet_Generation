@@ -1,7 +1,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title> Student Login</title>
+  <title>Registration</title>
   <link rel="stylesheet" type="text/css" href="loginstyle.css">
 </head>
 
@@ -13,7 +13,7 @@
         <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
           
           
-          <h1>Welcome to Student's Login</h1>
+          <h1>Registration</h1>
         </div>
 
 
@@ -23,29 +23,55 @@
 
             <div class="formbg-inner padding-horizontal--48">
 
-              <form action = "Login_check.php" method ="POST">
+              <form action = "Enter_Reg_info.php" method ="POST">
                 
+                <div class="field padding-bottom--24">
+
+                  <label>Student's Name</label> 
+                  <input type = "text" name = "name" value = "">
+
+                </div>
 
                 <div class="field padding-bottom--24">
 
                   <label>Enter your ID</label> 
                   <input type = "number" name = "id" value = "">
 
-                </div>
+                  
+                  <div class="field padding-bottom--24">
 
-                <div class="field padding-bottom--24">
+                    <label>Enter your Email</label> 
+                    <input type = "text" name = "email" value = "">
+  
+                  </div>
 
+                  <div class="field padding-bottom--24">
+
+                    <label>Enter your Gender</label> 
+                    <input type = "text" name = "gender" value = "">
+                  
+  
+                  </div>
                   
 
                 <div class="field padding-bottom--24">
 
-                  <input type = "submit" value = "Login">
+                  <div class>
+
+                    <label for="password">Enter Password</label>
+                  </div>
+                  <input type="password" name="password">
+                  
+                </div>
+
+                <div class="field padding-bottom--24">
+
+                  <input type = "submit" value = "Next">
                   
                 </div>
               </form>
             </div>
           </div>
-          <div class="footer-link padding-top--24">
           </div>
         </div>
       </div>

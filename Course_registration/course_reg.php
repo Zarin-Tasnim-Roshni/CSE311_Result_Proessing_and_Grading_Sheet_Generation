@@ -10,7 +10,8 @@
 	$all_categories = mysqli_query($db,$sql);
 
 	// The following code checks if the submit button is clicked
-	// and inserts the data in the database accordingly
+
+
 	if(isset($_POST['submit']))
 	{
 		// Store the Product name in a "name" variable
@@ -34,7 +35,7 @@
 			echo '<script>alert("Course added successfully")</script>';
 		}
         */
-	}
+    }
 ?>
 
 
@@ -53,13 +54,14 @@
 
 		<select name="Category">
 			<?php
+
 				// use a while loop to fetch data
 				// from the $all_categories variable
 				// and individually display as an option
 				while ($category = mysqli_fetch_array(
 						$all_categories,MYSQLI_ASSOC)):;
 			?>
-				<option value="<?php echo $category["Teacher_Initial"];
+				<option value="<?php echo $category["Course_Name"];
 					// The value we usually set is the primary key
 				?>">
 					<?php echo $category["Course_Name"];
@@ -69,10 +71,11 @@
 			<?php
 				endwhile;
 				// While loop must be terminated
+            
 			?>
 		</select>
 		<br>
-		<input type="submit" value="submit" >
+		<input type="submit" value="submit">
 	</form>
 	<br>
 </body>
