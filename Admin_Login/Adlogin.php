@@ -10,18 +10,18 @@ else{
     echo "Database connected". "<br>". "<br>";
 }
 
-$Teacher_Initial = $_POST["initial"];
-$PW = $_POST["password"];
+$id = $_POST["id"];
+$PASS = $_POST["password"];
 
-echo "Teacher_Initial: ", $Teacher_Initial."<br>";
-echo "Teacher pw: ", $PW."<br>";
+echo "Admin_ID: ", $id."<br>";
+echo "Admin pw: ", $PASS."<br>";
 
-$sql = "SELECT Teacher_Initial FROM teacher_info WHERE Teacher_Initial = $Teacher_Initial";
+$sql = "SELECT PASS FROM admin WHERE Admin_ID = $id";
 $result = $db->query($sql);
 
 $row = $result->fetch_assoc();
 
-if($row["initial"]==$Teacher_Initial){
+if($row["PASS"]==$PASS){
     
     echo"successfull";
 

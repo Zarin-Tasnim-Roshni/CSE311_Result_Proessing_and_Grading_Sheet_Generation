@@ -16,14 +16,15 @@ $PW = $_POST["password"];
 echo "Teacher_Initial: ", $Teacher_Initial."<br>";
 echo "Teacher pw: ", $PW."<br>";
 
-$sql = "SELECT Teacher_Initial FROM teacher_info WHERE Teacher_Initial = $Teacher_Initial";
+$sql = "SELECT Teacher_Initial FROM teacher_info WHERE PW= $PW";
 $result = $db->query($sql);
 
 $row = $result->fetch_assoc();
 
-if($row["initial"]==$Teacher_Initial){
+if($row["Teacher_Initial"]==$Teacher_Initial){
     
     echo"successfull";
+   
 
 }
 
