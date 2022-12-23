@@ -1,68 +1,71 @@
 <html>
+
 <head>
   <title>Student Dash</title>
   <link rel="stylesheet" type="text/css" href="home_style.css">
 </head>
-<body background ="r.jpg">  
-<?php
 
-session_start();
+<body background="r.jpg">
+  <?php
 
-echo "Welcome, " . $_SESSION["id"] . "! This is your dashboard.";
+  session_start();
 
-$data=$_SESSION["id"] ;
+  echo "<div class = head>";
 
+  echo "<h1>" . "Welcome, " . $_SESSION["id"] . " This is your Dashboard." . "</h1>";
 
-$db = mysqli_connect("localhost", "root", "", "result_processing");
+  echo "</div>";
 
-if ($db->connect_error) {
-  die("Connection failed: " . $db->connect_error);
-}
-
-$query = "SELECT * FROM student_info WHERE Student_ID=$data";
+  $data = $_SESSION["id"];
 
 
-$result = $db->query($query);
+  $db = mysqli_connect("localhost", "root", "", "result_processing");
+
+  if ($db->connect_error) {
+    die("Connection failed: " . $db->connect_error);
+  }
+
+  $query = "SELECT * FROM student_info WHERE Student_ID=$data";
 
 
-if (!$result) {
-  die("Query failed: " . $db->error);
-}
+  $result = $db->query($query);
 
 
-echo "<table>";
+  if (!$result) {
+    die("Query failed: " . $db->error);
+  }
 
-echo "<tr>";
-echo "<th>NAME</th>";
-echo "<th>ID</th>";
-echo "<th>Email</th>";
-echo "<th>GENDER</th>";
-echo "</tr>";
 
-while ($row = $result->fetch_assoc()) {
+  echo "<table>";
 
   echo "<tr>";
-  echo "<td>" . $row["StudentName"] . "</td>";
-  echo "<td>" . $row["Student_ID"] . "</td>";
-  echo "<td>" . $row["StudentEmail"] . "</td>";
-  echo "<td>" . $row["Gender"] . "</td>";
+  echo "<th>NAME</th>";
+  echo "<th>ID</th>";
+  echo "<th>Email</th>";
+  echo "<th>GENDER</th>";
   echo "</tr>";
-}
+
+  while ($row = $result->fetch_assoc()) {
+
+    echo "<tr>";
+    echo "<td>" . $row["StudentName"] . "</td>";
+    echo "<td>" . $row["Student_ID"] . "</td>";
+    echo "<td>" . $row["StudentEmail"] . "</td>";
+    echo "<td>" . $row["Gender"] . "</td>";
+    echo "</tr>";
+  }
 
 
-echo "</table>";
+  echo "</table>";
 
-$db->close();
+  $db->close();
 
-?>
+  ?>
 
-  <center> 
-  <button onclick="window.location.href = 'http://localhost/CSE311_Result_Proessing_and_Grading_Sheet_Generation/view_result/result.php';">View Grades</button>
-  <br></br>
   <center>
-  <button onclick="window.location.href = 'http://localhost/CSE311_Result_Proessing_and_Grading_Sheet_Generation/Login/Login_Test.html';">Print Grades</button>
-  <br></br>
-
+    <button onclick="window.location.href = 'http://localhost/CSE311_Result_Proessing_and_Grading_Sheet_Generation/view_result/result.php';">View Grades</button>
+    <br></br>
 
 </body>
+
 </html>

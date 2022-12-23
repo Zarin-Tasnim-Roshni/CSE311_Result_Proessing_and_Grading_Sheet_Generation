@@ -61,10 +61,8 @@ $db->close();
 ?>
 
   <center>
-  <button onclick="window.location.href = 'http://localhost/CSE311_Result_Proessing_and_Grading_Sheet_Generation/Login/Login_Test.html';">Print Grades</button>
+  <button onclick="window.print()">Print Result</button>
   <br></br>
-
-
 
 </body>
 </html>

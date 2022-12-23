@@ -79,3 +79,16 @@ body{
   margin: 20 auto;
   background-color: rgb(235, 188, 253);
 }
+
+@media print {
+
+  button {
+    display: none;
+  }
+  
+  a {
+    display: none;
+  }
+  
+}
+
