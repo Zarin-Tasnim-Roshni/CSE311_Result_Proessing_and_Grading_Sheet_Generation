@@ -17,11 +17,9 @@
 
 session_start();
 
-echo "Hello," . $_SESSION['ID'];
-
 	$db = mysqli_connect("localhost", "root", "", "result_processing");
 	
-	$sql = "SELECT * FROM teacher_course ";
+	$sql = "SELECT * FROM teacher_course";
 	$all_categories = mysqli_query($db,$sql);
 
 	if(isset($_POST['submit']))
@@ -31,13 +29,12 @@ echo "Hello," . $_SESSION['ID'];
 		$id = mysqli_real_escape_string($db,$_POST['Teacher_Initial']);
 		
     } ?>
-
-
+	
 	<form action = "course_reg2.php" method="POST">
+		
+	<h1> YOUR ID IS <?php echo $_SESSION['ID']?></h1>
 
 		<label>Select a Course</label>
-
-		<h1> YOUR ID IS <?php echo $_SESSION['ID']?></h1>
 
 		<select name="Category">
 			<?php
@@ -64,6 +61,7 @@ echo "Hello," . $_SESSION['ID'];
 
 		<input type="submit" value="submit"> 
 	</form>
+
 	<br>
 </body>
 </html>

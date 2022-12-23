@@ -10,8 +10,9 @@
   
   
   form {
-    
-    max-width: 500px; /* Set the maximum width of the form to 500px */
+
+  padding-top: 20px;
+  max-width: 500px; /* Set the maximum width of the form to 500px */
   margin: 0 auto; /* Center the form on the page */
   padding: 30px; /* Add some padding around the form */
   border: 3px solid #333333; /* Add a border around the form */
@@ -40,6 +41,7 @@
 
 
   select {
+    padding-top: 10px;
     width: 100%; /* Make the dropdown menu take up the full width of the form */
     padding: 12px; /* Add some padding to the dropdown menu */
     border: 1px solid #cccccc; /* Add a light grey border around the dropdown menu */
@@ -55,6 +57,7 @@
   }
   
   body{
+    
     position:absolute;
     top: 0;
     left: 0;
@@ -62,6 +65,7 @@
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
+    padding-top: 20px;
   }
 
 

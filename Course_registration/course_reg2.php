@@ -4,8 +4,9 @@ $db = mysqli_connect("localhost", "root", "", "result_processing");
 
  session_start();
 
-// Print the session variable
-echo "Hello," . $_SESSION['ID'];
+$x = $_SESSION['ID'];
+
+echo "Hello," . $x;
 
 if(!$db){
 
@@ -16,41 +17,49 @@ else{
 }
 
 
-
-
-
-
-
 $st_course = $_POST["Category"];
 $secret = $_POST['secret'];
-//$id = $_POST["id"];
 
-$sql = "INSERT INTO result(Course_Name) VALUES('$st_course')";
+echo "CHECKING CATEGORY : ".$st_course."<br>";
 
-echo "Student course: ", $st_course."<br>";
-echo "ID: ", $secret."<br>";
+$sql = "SELECT Course_Name FROM result WHERE Course_Name = '$st_course'";
+$result = $db->query($sql);
+$row = $result->fetch_assoc();
 
+
+if($st_course==$row['Course_Name']){
+
+    echo"Same Courses Selected <br>";
+
+} else{
+
+    $sql = "INSERT INTO result(Student_ID,Course_Name) VALUES($secret,'$st_course')";
 
 if(mysqli_query($db, $sql)){
 
+    $sql = "SELECT COUNT(Course_Name) FROM result WHERE Student_ID = $x";
+    $result = $db->query($sql);
+    $row = $result->fetch_assoc();
 
 
-    //echo "Information Inserted". "<br>". "<br>";
-    //$sql="INSERT INTO result(Student_ID) VALUES($id)";
-    //mysqli_query($db, $sql);
+    if($row['COUNT(Course_Name)']>=5){
 
-    // echo "Information Inserted". "<br>". "<br>";
+        echo"TOO MANY COURSES";
 
-    //header("Location: http://localhost/CSE311_Result_Proessing_and_Grading_Sheet_Generation/Course_Registration/course_reg.php");
-    
+    }
+    else{
+        
+    header("Location: http://localhost/CSE311_Result_Proessing_and_Grading_Sheet_Generation/Course_Registration/course_reg.php");
     exit;
 
-
+    }
+    
 }
 else{
 
     echo "error" . mysqli_error($db);
 }
 
+}
 
 ?>
