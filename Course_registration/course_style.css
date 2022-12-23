@@ -20,22 +20,6 @@
   box-shadow: 2px 2px 2px #888888; /* Add a subtle shadow to the form */
   background-color: rgb(235, 188, 253);
     
-   /* display: block;
-    margin: 0 auto;
-    background-color: rgb(235, 188, 253);
-    border: none;
-    color: rgb(6, 19, 26);
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 20px;
-    border: 3px solid black;
-    font-weight: bold;*/
-
-
   
   }
 
@@ -91,3 +75,17 @@
 
     background-color: #45a049; /* Change the background color of the submit button on hover to a darker green */
   }
+
+  .container{
+
+    padding-top: 20px;
+    max-width: 500px; /* Set the maximum width of the form to 500px */
+    margin: 0 auto; /* Center the form on the page */
+    padding: 30px; /* Add some padding around the form */
+    border: 3px solid #333333; /* Add a border around the form */
+    border-radius: 5px; /* Round the corners of the border */
+    box-shadow: 2px 2px 2px #888888; /* Add a subtle shadow to the form */
+    background-color: rgb(235, 188, 253);
+
+
+  };

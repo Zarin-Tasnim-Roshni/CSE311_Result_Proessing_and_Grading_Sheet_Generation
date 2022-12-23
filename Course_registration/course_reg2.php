@@ -6,7 +6,7 @@ $db = mysqli_connect("localhost", "root", "", "result_processing");
 
 $x = $_SESSION['ID'];
 
-echo "Hello," . $x;
+//echo "Hello," . $x;
 
 if(!$db){
 
@@ -20,7 +20,7 @@ else{
 $st_course = $_POST["Category"];
 $secret = $_POST['secret'];
 
-echo "CHECKING CATEGORY : ".$st_course."<br>";
+//echo "CHECKING CATEGORY : ".$st_course."<br>";
 
 $sql = "SELECT Course_Name FROM result WHERE Course_Name = '$st_course'";
 $result = $db->query($sql);
@@ -30,6 +30,9 @@ $row = $result->fetch_assoc();
 if($st_course==$row['Course_Name']){
 
     echo"Same Courses Selected <br>";
+
+    sleep(3);
+    header("Location:http://localhost/CSE311_Result_Proessing_and_Grading_Sheet_Generation/Course_Registration/course_reg.php");
 
 } else{
 
@@ -44,13 +47,16 @@ if(mysqli_query($db, $sql)){
 
     if($row['COUNT(Course_Name)']>=5){
 
-        echo"TOO MANY COURSES";
+        sleep(3);
+        
+        header("Location:http://localhost/CSE311_Result_Proessing_and_Grading_Sheet_Generation/Course_Registration/reg_complete.html");
+
+
 
     }
     else{
         
-    header("Location: http://localhost/CSE311_Result_Proessing_and_Grading_Sheet_Generation/Course_Registration/course_reg.php");
-    exit;
+    header("Location:http://localhost/CSE311_Result_Proessing_and_Grading_Sheet_Generation/Course_Registration/course_reg.php");
 
     }
     
