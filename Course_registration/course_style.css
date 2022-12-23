@@ -1,15 +1,83 @@
 * {
-    padding: 0;
-    margin: 0;
-    color: #1e0612;
-    box-sizing: border-box;
-    word-wrap: break-word;
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Ubuntu,sans-serif;
-  }
+  padding: 0;
+  margin: 0;
+  color: #1e0612;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Ubuntu,sans-serif;
+}
 
+
+
+form {
+
+padding-top: 20px;
+padding-left: 50px;
+max-width: 500px; /* Set the maximum width of the form to 500px */
+margin: 20px; /* Center the form on the page */
+padding: 30px; /* Add some padding around the form */
+border: 3px solid #333333; /* Add a border around the form */
+border-radius: 5px; /* Round the corners of the border */
+box-shadow: 2px 2px 2px #888888; /* Add a subtle shadow to the form */
+background-color: rgb(235, 188, 253);
   
+
+}
+
+
+select {
+  padding-top: 10px;
+  width: 100%; /* Make the dropdown menu take up the full width of the form */
+  padding: 12px; /* Add some padding to the dropdown menu */
+  border: 1px solid #cccccc; /* Add a light grey border around the dropdown menu */
+  border-radius: 4px; /* Round the corners of the border */
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.075); /* Add a subtle shadow to the dropdown menu */
+}
+
+label {
+  display: block; /* Display the label as a block element */
+  font-size: 18px; /* Increase the font size of the label */
+  font-weight: bold; /* Make the label text bold */
+  margin-bottom: 10px; /* Add some space between the label and the dropdown menu */
+}
+
+body{
   
-  form {
+  position:absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 20px;
+}
+
+
+input[type="submit"] {
+
+  padding-top: 10px;
+  margin-top: 10px;
+
+  background-color: #4CAF50; /* Set the background color of the submit button to green */
+  color: white; /* Set the text color of the submit button to white */
+  font-size: 16px; /* Increase the font size of the submit button */
+  font-weight: bold; /* Make the submit button text bold */
+  padding: 12px 20px; /* Add some padding to the submit button */
+  border: none; /* Remove the border from the submit button */
+  border-radius: 4px; /* Round the corners of the submit button */
+  cursor: pointer; /* Change the cursor to a hand when hovering over the submit button */
+}
+
+input[type="submit"]:hover {
+
+  padding-top: 10px;
+  margin-top: 10px;
+
+  background-color: #45a049; /* Change the background color of the submit button on hover to a darker green */
+}
+
+.container{
 
   padding-top: 20px;
   max-width: 500px; /* Set the maximum width of the form to 500px */
@@ -19,73 +87,34 @@
   border-radius: 5px; /* Round the corners of the border */
   box-shadow: 2px 2px 2px #888888; /* Add a subtle shadow to the form */
   background-color: rgb(235, 188, 253);
-    
-  
-  }
 
 
-  select {
-    padding-top: 10px;
-    width: 100%; /* Make the dropdown menu take up the full width of the form */
-    padding: 12px; /* Add some padding to the dropdown menu */
-    border: 1px solid #cccccc; /* Add a light grey border around the dropdown menu */
-    border-radius: 4px; /* Round the corners of the border */
-    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075); /* Add a subtle shadow to the dropdown menu */
-  }
-  
-  label {
-    display: block; /* Display the label as a block element */
-    font-size: 18px; /* Increase the font size of the label */
-    font-weight: bold; /* Make the label text bold */
-    margin-bottom: 10px; /* Add some space between the label and the dropdown menu */
-  }
-  
-  body{
-    
-    position:absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-top: 20px;
-  }
+};
 
+table {
 
-  input[type="submit"] {
+  border: 3px solid black;
+  max-width: 70%;
+  margin: 20px;
+  background-color: #a8a7f3;
+}
 
-    padding-top: 10px;
-    margin-top: 10px;
+th {
 
-    background-color: #4CAF50; /* Set the background color of the submit button to green */
-    color: white; /* Set the text color of the submit button to white */
-    font-size: 16px; /* Increase the font size of the submit button */
-    font-weight: bold; /* Make the submit button text bold */
-    padding: 12px 20px; /* Add some padding to the submit button */
-    border: none; /* Remove the border from the submit button */
-    border-radius: 4px; /* Round the corners of the submit button */
-    cursor: pointer; /* Change the cursor to a hand when hovering over the submit button */
-  }
-  
-  input[type="submit"]:hover {
+  padding: 8px;
+  border: 3px solid black;
+  background-color: rgb(235, 188, 253);
+  font-weight: bold;
 
-    padding-top: 10px;
-    margin-top: 10px;
+}
 
-    background-color: #45a049; /* Change the background color of the submit button on hover to a darker green */
-  }
+tr, td {
 
-  .container{
-
-    padding-top: 20px;
-    max-width: 500px; /* Set the maximum width of the form to 500px */
-    margin: 0 auto; /* Center the form on the page */
-    padding: 30px; /* Add some padding around the form */
-    border: 3px solid #333333; /* Add a border around the form */
-    border-radius: 5px; /* Round the corners of the border */
-    box-shadow: 2px 2px 2px #888888; /* Add a subtle shadow to the form */
-    background-color: rgb(235, 188, 253);
-
-
-  };
+  color: rgb(10, 10, 10);
+  border: 10px;
+  font-size: large;
+  font-weight: bold;
+  border: 3px solid black;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+}

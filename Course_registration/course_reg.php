@@ -17,6 +17,8 @@
 
 session_start();
 
+
+
 	$db = mysqli_connect("localhost", "root", "", "result_processing");
 	
 	$sql = "SELECT * FROM teacher_course";
@@ -31,8 +33,6 @@ session_start();
     } ?>
 	
 	<form action = "course_reg2.php" method="POST">
-		
-	<h1> YOUR ID IS <?php echo $_SESSION['ID']?></h1>
 
 		<label>Select a Course (5 courses):</label>
 
@@ -61,6 +61,37 @@ session_start();
 
 		<input type="submit" value="submit"> 
 	</form>
+
+	<?php
+
+	$x = $_SESSION['ID'];
+
+$query = "SELECT * FROM result WHERE Student_ID=$x";
+$result = $db->query($query);
+
+
+if (!$result) {
+  die("Query failed: " . $db->error);
+}
+
+
+echo "<table>";
+
+echo "<tr>";
+echo "<th>Courses Taken</th>";
+
+echo "</tr>";
+
+while ($row = $result->fetch_assoc()) {
+
+  echo "<tr>";
+  echo "<td>" . $row["Course_Name"] . "</td>";
+  echo "</tr>";
+}
+
+echo "</table>";
+
+	?>
 
 	<br>
 </body>

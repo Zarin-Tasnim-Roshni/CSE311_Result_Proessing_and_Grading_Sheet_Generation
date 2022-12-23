@@ -64,5 +64,20 @@ $db->close();
   <button onclick="window.print()">Print Result</button>
   <br></br>
 
+  <center>
+    <button id="logout-button">Log Out</button>
+
+    <script>
+    document.getElementById('logout-button').addEventListener('click', logout);
+
+
+    function logout() {
+
+  window.location.replace('http://localhost/CSE311_Result_Proessing_and_Grading_Sheet_Generation/login/login_test.html');
+
+  localStorage.removeItem('user');
+}
+    </script>
+
 </body>
 </html>

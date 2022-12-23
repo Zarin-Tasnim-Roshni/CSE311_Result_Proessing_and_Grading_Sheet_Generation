@@ -24,11 +24,6 @@ $sql = "SELECT Student_ID FROM result WHERE Course_Name IN ('$st_course')";
 $result = $db->query($sql);
 $row = $result->fetch_assoc();
 
-//$sql = "SELECT Student_ID FROM result WHERE Course_Name = '$st_course'";
-//$result2 = $db->query($sql);
-//$row2 = $result2->fetch_assoc();
-
-//while($row["Course_Name"]){
     
 if($secret==$row['Student_ID']){
 
@@ -38,6 +33,8 @@ if($secret==$row['Student_ID']){
     header("Location:http://localhost/CSE311_Result_Proessing_and_Grading_Sheet_Generation/Course_Registration/course_reg.php");
 
 } else{
+
+    
 
     $sql = "INSERT INTO result(Student_ID,Course_Name) VALUES($secret,'$st_course')";
     
@@ -69,7 +66,5 @@ else{
 }
 
 }
-//}
-
 
 ?>
