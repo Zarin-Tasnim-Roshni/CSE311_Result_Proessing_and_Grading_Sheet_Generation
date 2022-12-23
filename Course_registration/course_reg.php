@@ -34,7 +34,7 @@ session_start();
 		
 	<h1> YOUR ID IS <?php echo $_SESSION['ID']?></h1>
 
-		<label>Select a Course</label>
+		<label>Select a Course (5 courses):</label>
 
 		<select name="Category">
 			<?php

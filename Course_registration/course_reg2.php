@@ -6,7 +6,6 @@ $db = mysqli_connect("localhost", "root", "", "result_processing");
 
 $x = $_SESSION['ID'];
 
-//echo "Hello," . $x;
 
 if(!$db){
 
@@ -20,7 +19,6 @@ else{
 $st_course = $_POST["Category"];
 $secret = $_POST['secret'];
 
-//echo "CHECKING CATEGORY : ".$st_course."<br>";
 
 $sql = "SELECT Course_Name FROM result WHERE Course_Name = '$st_course'";
 $result = $db->query($sql);
@@ -50,7 +48,6 @@ if(mysqli_query($db, $sql)){
         sleep(3);
         
         header("Location:http://localhost/CSE311_Result_Proessing_and_Grading_Sheet_Generation/Course_Registration/reg_complete.html");
-
 
 
     }
