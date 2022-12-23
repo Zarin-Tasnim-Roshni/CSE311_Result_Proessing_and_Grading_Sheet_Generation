@@ -20,7 +20,7 @@ $st_course = $_POST["Category"];
 $secret = $_POST['secret'];
 
 
-$sql = "SELECT Course_Name FROM result WHERE Student_ID = '$secret'";
+$sql = "SELECT Student_ID FROM result WHERE Course_Name IN ('$st_course')";
 $result = $db->query($sql);
 $row = $result->fetch_assoc();
 
@@ -30,7 +30,7 @@ $row = $result->fetch_assoc();
 
 //while($row["Course_Name"]){
     
-if($st_course==$row['Course_Name']){
+if($secret==$row['Student_ID']){
 
     echo"Same Courses Selected <br>";
 
