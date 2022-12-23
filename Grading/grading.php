@@ -1,109 +1,119 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Submit Grades</title>
+  <link rel="stylesheet" type="text/css" href="home_style.css">
+</head>
+
+<body>
+
 <?php
+
+session_start();
+
 
 $db = mysqli_connect("localhost", "root", "", "result_processing");
 
-if(!$db){
+$t_initial = $_SESSION["initial"];
+$t_course = $_SESSION["t_coursename"];
 
-    echo "Database not connected";
+
+echo "Teacher's initial: " . $t_initial . "<br>";
+echo "Teacher's course: " . $t_course;
+
+
+$query = "SELECT * FROM result WHERE Course_Name='$t_course'";
+$result = $db->query($query);
+
+
+if (!$result) {
+  die("Query failed: " . $db->error);
 }
-else{ 
-    echo "Database connected". "<br>". "<br>";
+
+
+echo "<table>";
+
+echo "<tr>";
+echo "<th>ID</th>";
+echo "<th>Quiz</th>";
+echo "<th>Midterm</th>";
+echo "<th>Final</th>";
+echo "<th>Grade</th>";
+
+echo "</tr>";
+
+while ($row = $result->fetch_assoc()) {
+
+  echo "<tr>";
+  echo "<td>" . $row["Student_ID"] . "</td>";
+  echo "<td>" . $row["QUIZ"] . "</td>";
+  echo "<td>" . $row["MID"] . "</td>";
+  echo "<td>" . $row["FINAL"] . "</td>";
+  echo "<td>" . $row["GRADE"] . "</td>";
+  echo "</tr>";
 }
 
-
-$course = $_POST["course"];
-$id = $_POST["id"];
-$quiz = $_POST["quiz"];
-$mid = $_POST["mid"];
-$final = $_POST["final"];
-
-
-echo "Course: ", $course."<br>";
-echo "Student ID: ", $id."<br>";
-echo "quiz: ", $quiz."<br>";
-echo "mid: ", $mid."<br>";
-echo "final: ", $final."<br>";
-
-$sql = "SELECT Course_Name FROM result WHERE  Student_ID = $id AND Course_Name = '$course' AND Teacher_Initial='mdar'";
-$result = $db->query($sql);
-
-
-$row = $result->fetch_assoc();
-
-echo "course name : ", $row["Course_Name"];
-
-
-if($row["Course_Name"]==$course){
-
-
-    $result=$quiz+$mid+$final;
-
-    switch($result) {
-        case $result >= 70 and $result <= 100:
-
-            echo 'Your Grade is A';
-            $grade = 'A';
-
-            $sql= "UPDATE result SET QUIZ = $quiz WHERE Student_ID = $id AND Course_Name = '$course' AND Teacher_Initial='mdar'";
-            mysqli_query($db, $sql);
-
-            $sql= "UPDATE result SET MID = $mid WHERE Student_ID = $id AND Course_Name = '$course' AND Teacher_Initial='mdar'";
-            mysqli_query($db, $sql);
-
-            $sql= "UPDATE result SET FINAL = $final WHERE Student_ID = $id AND Course_Name = '$course' AND Teacher_Initial='mdar'";
-            mysqli_query($db, $sql);
-
-            $sql= "UPDATE result SET GRADE = '$grade' WHERE Student_ID = $id AND Course_Name = '$course' AND Teacher_Initial='mdar'";
-            mysqli_query($db, $sql);
-
-            break;
-
-        case $result >= 60 and $result <= 69:
-
-            echo 'Your Grade is B+';
-            $grade = 'B';
-
-            $sql= "UPDATE result SET QUIZ = $quiz WHERE Student_ID = $id AND Course_Name = '$course' AND Teacher_Initial='mdar'";
-            mysqli_query($db, $sql);
-
-            $sql= "UPDATE result SET MID = $mid WHERE Student_ID = $id AND Course_Name = '$course' AND Teacher_Initial='mdar'";
-            mysqli_query($db, $sql);
-
-            $sql= "UPDATE result SET FINAL = $final WHERE Student_ID = $id AND Course_Name = '$course' AND Teacher_Initial='mdar'";
-            mysqli_query($db, $sql);
-
-            $sql= "UPDATE result SET GRADE = '$grade' WHERE Student_ID = $id AND Course_Name = '$course' AND Teacher_Initial='mdar'";
-            mysqli_query($db, $sql);
-            
-            break;
-
-        case $result >= 59 and $result <= 60:
-
-            echo 'Your Grade is B';
-            $grade = 'C';
-            
-            $sql= "UPDATE result SET QUIZ = $quiz WHERE Student_ID = $id AND Course_Name = '$course' AND Teacher_Initial='mdar'";
-            mysqli_query($db, $sql);
-
-            $sql= "UPDATE result SET MID = $mid WHERE Student_ID = $id AND Course_Name = '$course' AND Teacher_Initial='mdar'";
-            mysqli_query($db, $sql);
-
-            $sql= "UPDATE result SET FINAL = $final WHERE Student_ID = $id AND Course_Name = '$course' AND Teacher_Initial='mdar'";
-            mysqli_query($db, $sql);
-
-            $sql= "UPDATE result SET GRADE = '$grade' WHERE Student_ID = $id AND Course_Name = '$course' AND Teacher_Initial='mdar'";
-            mysqli_query($db, $sql);
-
-            
-        default:
-        echo 'something else';
-        }
-
-    }
-else{
-    
- echo "error";
- 
-}
+echo "</table>";
 
 ?>
+
+
+  <div class="login-root">
+    <div class="box-root flex-flex flex-direction--column" 
+    style="min-height: 100vh;flex-grow: 1;">
+      <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
+        <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
+          
+          
+          <h1>Submit Grades</h1>
+        </div>
+
+
+        <div class="formbg-outer">
+          <div class="formbg">
+
+
+            <div class="formbg-inner padding-horizontal--48">
+
+              <form action = "grading2.php" method ="POST">
+
+                <div class="field padding-bottom--24">
+
+                    <label>Select Student</label> 
+                    <input type = "number" name = "id" value = "">
+
+                </div>
+
+                <div class="field padding-bottom--24">
+
+                    <label>Quiz (Out of 30) </label>
+                    <input type = "number" name = "quiz" value = "" max="30">
+                    <br><br>
+
+                    <label>Mid (Out of 30)</label>
+                    <input type = "number" name = "mid" value = "" max="30">
+                    <br><br>
+
+                    <label>Final (Out of 40)</label>
+                    <input type = "number" name = "final" value = "" max="40">
+                    <br><br>
+
+                </div>
+
+                <div class="field padding-bottom--24">
+
+                  <input type = "submit" value = "Submit Grades">
+                  
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="footer-link padding-top--24">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
