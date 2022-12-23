@@ -103,29 +103,24 @@ echo "</table>";
                 <div class="field padding-bottom--24">
 
                   <input type = "submit" value = "Submit Grades">
-
-                  <center>
-
-                  
-    <button id="logout-button">Log Out</button>
-
-    <script>
-    document.getElementById('logout-button').addEventListener('click', logout);
-
-
-    function logout() {
-
-  window.location.replace('http://localhost/CSE311_Result_Proessing_and_Grading_Sheet_Generation/login/login_test.html');
-
-  localStorage.removeItem('user');
-}
-    </script>
-                  
                 </div>
               </form>
+
+
+              <center>
+                
+              <button id="logout-button">Log Out</button>
+              <script>
+              document.getElementById('logout-button').addEventListener('click', logout);
+              function logout() {
+                window.location.replace('http://localhost/CSE311_Result_Proessing_and_Grading_Sheet_Generation/teacher_login/tlogin.html');
+                localStorage.removeItem('user');
+                session_destroy();
+              }
+              
+              </script>
             </div>
           </div>
-          <div class="footer-link padding-top--24">
           </div>
         </div>
       </div>

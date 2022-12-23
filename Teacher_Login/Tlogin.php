@@ -14,7 +14,7 @@ if(empty($initial) || empty($pass)){
     echo"error";
     echo '<script>alert("Username or Password Incorrect")</script>';
 
-    header("Refresh: 0.5; URL=http://localhost/CSE311_Result_Proessing_and_Grading_Sheet_Generation/login/login_test.html");
+    header("Refresh: 0.5; URL=http://localhost/CSE311_Result_Proessing_and_Grading_Sheet_Generation/teacher_login/tlogin.html");
 
 }
 else{
@@ -38,7 +38,7 @@ else{
     echo"error";
     echo '<script>alert("Username or Password Incorrect")</script>';
 
-    header("Refresh: 0.5; URL=http://localhost/CSE311_Result_Proessing_and_Grading_Sheet_Generation/Teacher_login/Ttest.html");
+    header("Refresh: 0.5; URL=http://localhost/CSE311_Result_Proessing_and_Grading_Sheet_Generation/Teacher_login/Tlogin.html");
 
 }
 }
