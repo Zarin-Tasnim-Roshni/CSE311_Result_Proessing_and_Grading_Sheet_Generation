@@ -87,15 +87,15 @@ echo "</table>";
                 <div class="field padding-bottom--24">
 
                     <label>Quiz (Out of 30) </label>
-                    <input type = "number" name = "quiz" value = "" max="30">
+                    <input type = "number" name = "quiz" value = "" max="30"  min="0">
                     <br><br>
 
                     <label>Mid (Out of 30)</label>
-                    <input type = "number" name = "mid" value = "" max="30">
+                    <input type = "number" name = "mid" value = "" max="30" min="0">
                     <br><br>
 
                     <label>Final (Out of 40)</label>
-                    <input type = "number" name = "final" value = "" max="40">
+                    <input type = "number" name = "final" value = "" max="40" min="0">
                     <br><br>
 
                 </div>
