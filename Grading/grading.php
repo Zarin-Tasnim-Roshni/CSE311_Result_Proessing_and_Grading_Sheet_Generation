@@ -79,8 +79,8 @@ echo "</table>";
 
                 <div class="field padding-bottom--24">
 
-                    <label>Select Student</label> 
-                    <input type = "number" name = "id" value = "">
+                    <label>Enter Student ID</label> 
+                    <input type = "number" name = "id" value = ""  max="9999999999"  min="0">
 
                 </div>
 
