@@ -7,32 +7,17 @@ $course = $_SESSION["t_coursename"];
 
 $db = mysqli_connect("localhost", "root", "", "result_processing");
 
-/*if(!$db){
-
-    echo "Database not connected";
-}
-else{ 
-    echo "Database connected". "<br>". "<br>";
-}*/
-
 $id = $_POST["id"];
 $quiz = $_POST["quiz"];
 $mid = $_POST["mid"];
 $final = $_POST["final"];
 
 
-/*echo "Student ID: ", $id."<br>";
-echo "quiz: ", $quiz."<br>";
-echo "mid: ", $mid."<br>";
-echo "final: ", $final."<br>";*/
-
 $sql = "SELECT Course_Name FROM result WHERE  Student_ID = $id AND Course_Name = '$course'";
 $result = $db->query($sql);
 
 
 $row = $result->fetch_assoc();
-
-/*echo "course name : ", $row["Course_Name"];*/
 
 
 if($row["Course_Name"]==$course){
@@ -148,6 +133,5 @@ else{
  echo "error";
  
 }
-//header("Location:http://localhost/CSE311_Result_Proessing_and_Grading_Sheet_Generation/grading/grading.php");
 
 ?>

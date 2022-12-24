@@ -38,7 +38,6 @@ if(mysqli_query($db, $sql)){
     echo "Information Inserted". "<br>". "<br>";
 
      $_SESSION['ID'] = $id;
-     //$_SESSION['courseno']=$st_courseno;
      header('Location: course_reg.php');
 
      header("Location:http://localhost/CSE311_Result_Proessing_and_Grading_Sheet_Generation/Course_Registration/course_reg.php");

@@ -20,8 +20,6 @@ else{
 
 $st_course = $_POST["Category"];
 $secret = $_POST['secret'];
-//$courseno=$_SESSION['courseno'];
-
 
 $sql = "SELECT Student_ID FROM result WHERE Course_Name IN ('$st_course')";
 $result = $db->query($sql);
@@ -53,9 +51,6 @@ if($secret==$row['Student_ID']){
         sleep(3);
         
         header("Location:http://localhost/CSE311_Result_Proessing_and_Grading_Sheet_Generation/Course_Registration/reg_complete.html");
-
-        //echo "jeff:".$t_courseno;
-
 
     }
     else{

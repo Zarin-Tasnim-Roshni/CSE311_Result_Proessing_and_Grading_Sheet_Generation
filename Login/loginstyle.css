@@ -51,22 +51,6 @@
       -ms-flex-direction: column;
       flex-direction: column;
   }
- /* .box-divider--light-all-2 {
-      box-shadow: inset 0 0 0 2px #f4aae7;
-  }*/
- /* .box-background--blue {
-      background-color: #f0be78;
-  }*/
- 
-  /*.box-background--blue800 {
-      background-color: #f7fa33;
-  }*/
-  /*.box-background--gray100 {
-      background-color: #6cd174;
-  }*/
- /* .box-background--cyan200 {
-      background-color: #f30f35;
-  }*/
   .padding-top--64 {
     padding-top: 64px;
   }
