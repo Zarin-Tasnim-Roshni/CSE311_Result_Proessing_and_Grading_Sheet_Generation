@@ -24,6 +24,8 @@ session_start();
 	$sql = "SELECT * FROM teacher_course";
 	$all_categories = mysqli_query($db,$sql);
 
+	
+
 	if(isset($_POST['submit']))
 	{
 		$name = mysqli_real_escape_string($db,$_POST['Course_Name']);
@@ -34,7 +36,7 @@ session_start();
 	
 	<form action = "course_reg2.php" method="POST">
 
-		<label>Select a Course (5 courses):</label>
+		<label>Select a Course (x courses):</label>
 
 		<select name="Category">
 			<?php

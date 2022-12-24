@@ -1,10 +1,12 @@
 <?php
 
+session_start();
+
 $db = mysqli_connect("localhost", "root", "", "result_processing");
 
- session_start();
 
 $x = $_SESSION['ID'];
+$t_courseno=$_SESSION['courseno'];
 
 
 if(!$db){
@@ -18,6 +20,7 @@ else{
 
 $st_course = $_POST["Category"];
 $secret = $_POST['secret'];
+//$courseno=$_SESSION['courseno'];
 
 
 $sql = "SELECT Student_ID FROM result WHERE Course_Name IN ('$st_course')";
@@ -45,11 +48,13 @@ if($secret==$row['Student_ID']){
     $row = $result->fetch_assoc();
 
 
-    if($row['COUNT(Course_Name)']>=5){
+    if($row['COUNT(Course_Name)']>=$t_courseno){
 
         sleep(3);
         
         header("Location:http://localhost/CSE311_Result_Proessing_and_Grading_Sheet_Generation/Course_Registration/reg_complete.html");
+
+        //echo "jeff:".$t_courseno;
 
 
     }

@@ -16,7 +16,10 @@ $st_name = $_POST["name"];
 $id = $_POST["id"];
 $st_email = $_POST["email"];
 $st_gender = $_POST["gender"];
+$st_courseno = $_POST["courseno"];
 $pass = $_POST["password"];
+
+$_SESSION['courseno']=$st_courseno;
 
 $sql = "INSERT INTO student_info(StudentName,StudentEmail,Gender,password,Student_ID) VALUES('$st_name','$st_email','$st_gender','$pass',$id)";
 
@@ -35,6 +38,7 @@ if(mysqli_query($db, $sql)){
     echo "Information Inserted". "<br>". "<br>";
 
      $_SESSION['ID'] = $id;
+     //$_SESSION['courseno']=$st_courseno;
      header('Location: course_reg.php');
 
      header("Location:http://localhost/CSE311_Result_Proessing_and_Grading_Sheet_Generation/Course_Registration/course_reg.php");
