@@ -114,8 +114,10 @@ echo "</table>";
               document.getElementById('logout-button').addEventListener('click', logout);
               function logout() {
                 window.location.replace('http://localhost/CSE311_Result_Proessing_and_Grading_Sheet_Generation/teacher_login/tlogin.html');
-                localStorage.removeItem('user');
-                session_destroy();
+                <?php 
+      session_destroy();
+      ?>
+      exit();
               }
               
               </script>

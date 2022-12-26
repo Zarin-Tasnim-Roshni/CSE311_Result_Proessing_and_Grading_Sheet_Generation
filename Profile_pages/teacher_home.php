@@ -77,7 +77,10 @@
 
   window.location.replace('http://localhost/CSE311_Result_Proessing_and_Grading_Sheet_Generation/teacher_login/tlogin.html');
 
-  localStorage.removeItem('user');
+  <?php 
+      session_destroy();
+      ?>
+      exit();
 }
     </script>
 </body>

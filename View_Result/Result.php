@@ -73,9 +73,12 @@ $db->close();
 
     function logout() {
 
-  window.location.replace('http://localhost/CSE311_Result_Proessing_and_Grading_Sheet_Generation/login/login_test.html');
+      window.location.replace('http://localhost/CSE311_Result_Proessing_and_Grading_Sheet_Generation/login/login_test.html');
+      <?php 
+      session_destroy();
+      ?>
+      exit();
 
-  localStorage.removeItem('user');
 }
     </script>
 
