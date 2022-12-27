@@ -30,9 +30,6 @@ echo "Student Pass: ", $pass."<br>";
 echo "Student email: ", $st_email."<br>";
 echo "Student gender: ", $st_gender."<br>";
 
-
-
-
 if(mysqli_query($db, $sql)){
 
     echo "Information Inserted". "<br>". "<br>";
@@ -41,9 +38,6 @@ if(mysqli_query($db, $sql)){
      header('Location: course_reg.php');
 
      header("Location:http://localhost/CSE311_Result_Proessing_and_Grading_Sheet_Generation/Course_Registration/course_reg.php");
-
-
-
 
 }
 else{

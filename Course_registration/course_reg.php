@@ -36,7 +36,7 @@ session_start();
 	
 	<form action = "course_reg2.php" method="POST">
 
-		<label>Select a Course (x courses):</label>
+		<label>Select Courses:</label>
 
 		<select name="Category">
 			<?php
